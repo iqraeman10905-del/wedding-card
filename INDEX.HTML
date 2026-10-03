@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ayesha & Imran Shahid | Wedding Invitation</title>
+
+<style>
+
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #14090e;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   CURTAIN SCREEN
+========================= */
+
+.curtain-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    overflow: hidden;
+}
+
+.curtain {
+    width: 50%;
+    height: 100%;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #3b0714 0px,
+            #650d22 35px,
+            #3b0714 70px
+        );
+    transition: transform 1.8s ease;
+}
+
+.curtain.left {
+    border-right: 2px solid #d8b466;
+}
+
+.curtain.right {
+    border-left: 2px solid #d8b466;
+}
+
+.curtain-screen.open .left {
+    transform: translateX(-100%);
+}
+
+.curtain-screen.open .right {
+    transform: translateX(100%);
+}
+
+
+/* =========================
+   OPEN BUTTON
+========================= */
+
+.open-box {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.open-box h1 {
+    color: #f1d89a;
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+.open-btn {
+    padding: 14px 32px;
+    border: 1px solid #d8b466;
+    border-radius: 30px;
+    background: #190a10;
+    color: #f1d89a;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.open-btn:hover {
+    background: #d8b466;
+    color: #190a10;
+}
+
+
+/* =========================
+   MAIN INVITATION
+========================= */
+
+.invitation {
+    min-height: 100vh;
+    padding: 35px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.invitation-container {
+    width: 100%;
+    max-width: 850px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    display: none;
+    min-height: 550px;
+    padding: 45px 35px;
+    border-radius: 25px;
+    text-align: center;
+    border: 1px solid #d8b466;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+    animation: cardOpen 0.7s ease;
+}
+
+.card.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes cardOpen {
+    from {
+        opacity: 0;
+        transform: scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   COVER
+========================= */
+
+.cover {
+    background:
+        radial-gradient(circle, #6b2637, #190a10 70%);
+}
+
+.small-text {
+    letter-spacing: 4px;
+    color: #f1d89a;
+    margin-bottom: 20px;
+}
+
+.card h1 {
+    color: #f1d89a;
+    font-size: 55px;
+    margin: 15px 0;
+}
+
+.and {
+    color: white;
+    font-size: 22px;
+}
+
+.date {
+    font-size: 20px;
+    color: #f1d89a;
+    margin-top: 20px;
+}
+
+.flower {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   MEHNDI CARD
+========================= */
+
+.mehndi {
+    background:
+        radial-gradient(circle at top, #4f7d3b, #12351e 65%, #092215);
+    border-color: #d9c76b;
+}
+
+.mehndi h2 {
+    font-size: 42px;
+    color: #f4e7a1;
+    margin-bottom: 20px;
+}
+
+.mehndi .girls {
+    font-size: 55px;
+    margin: 15px 0;
+}
+
+.mehndi .decor {
+    font-size: 28px;
+    margin: 15px;
+}
+
+.mehndi p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   BARAAT CARD
+========================= */
+
+.baraat {
+    background:
+        radial-gradient(circle at top, #8b1e32, #3a0715 65%, #18060c);
+}
+
+.baraat h2 {
+    font-size: 45px;
+    color: #f1d89a;
+    margin-bottom: 20px;
+}
+
+.baraat .baraat-icon {
+    font-size: 55px;
+    margin: 20px 0;
+}
+
+.baraat p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   WALIMA CARD
+========================= */
+
+.walima {
+    background:
+        radial-gradient(circle at top, #fffdf5, #eee6d4 60%, #d9cbb3);
+    color: #392d20;
+    border-color: #c9a85c;
+}
+
+.walima h2 {
+    font-size: 45px;
+    color: #a17a28;
+    margin-bottom: 20px;
+}
+
+.walima .walima-icon {
+    font-size: 55px;
+    margin: 20px 0;
+}
+
+.walima p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   FINAL CARD
+========================= */
+
+.final-card {
+    background:
+        radial-gradient(circle, #6b2637, #190a10 70%);
+}
+
+.final-card h2 {
+    color: #f1d89a;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.final-card p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   DETAILS
+========================= */
+
+.details {
+    margin-top: 25px;
+    line-height: 2;
+}
+
+.details strong {
+    color: #f1d89a;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.controls {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.controls button {
+    padding: 10px 22px;
+    border: 1px solid #d8b466;
+    border-radius: 25px;
+    background: transparent;
+    color: #f1d89a;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.controls button:hover {
+    background: #d8b466;
+    color: #190a10;
+}
+
+
+/* =========================
+   DOTS
+========================= */
+
+.dots {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin: 5px;
+    border-radius: 50%;
+    background: #765b34;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #d8b466;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .invitation {
+        padding: 15px;
+    }
+
+    .card {
+        min-height: 560px;
+        padding: 30px 20px;
+    }
+
+    .card h1 {
+        font-size: 40px;
+    }
+
+    .card h2 {
+        font-size: 34px;
+    }
+
+    .open-box h1 {
+        font-size: 28px;
+    }
+
+    .date {
+        font-size: 17px;
+    }
+
+    .details {
+        font-size: 15px;
+    }
+
+    .controls button {
+        padding: 9px 17px;
+    }
+}
+
+@media (max-height: 650px) {
+
+    .card {
+        min-height: 500px;
+        padding: 25px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     CURTAIN
+========================= -->
+
+<div class="curtain-screen" id="curtainScreen">
+
+    <div class="curtain left"></div>
+
+    <div class="open-box">
+
+        <h1>Ayesha & Imran Shahid</h1>
+
+        <button class="open-btn" id="openBtn">
+            ✨ Open Invitation ✨
+        </button>
+
+    </div>
+
+    <div class="curtain right"></div>
+
+</div>
+
+
+
+<!-- =========================
+     INVITATION
+========================= -->
+
+<main class="invitation">
+
+<div class="invitation-container">
+
+
+<!-- COVER -->
+
+<section class="card cover active">
+
+    <div class="flower">❀</div>
+
+    <div class="small-text">
+        YOU ARE CORDIALLY INVITED
+    </div>
+
+    <h1>Ayesha</h1>
+
+    <div class="and">
+        &amp;
+    </div>
+
+    <h1>Imran Shahid</h1>
+
+    <div class="date">
+        9 · JANUARY · 2027
+    </div>
+
+    <p style="margin-top:25px;">
+        Together with their families,<br>
+        they invite you to celebrate<br>
+        their special day.
+    </p>
+
+</section>
+
+
+
+<!-- MEHNDI -->
+
+<section class="card mehndi">
+
+    <div class="girls">🌿 👩🏻‍🦰 👩🏻‍🦱 🌿</div>
+
+    <h2>Mehndi Night</h2>
+
+    <div class="decor">
+        ✨ 🌿 🪷 🌿 ✨
+    </div>
+
+    <p>
+        Let the colors, music and laughter<br>
+        make this evening unforgettable!
+    </p>
+
+    <div class="details">
+
+        <strong>DATE</strong><br>
+        7 January 2027
+
+        <br><br>
+
+        <strong>TIME</strong><br>
+        7:00 PM
+
+        <br><br>
+
+        <strong>VENUE</strong><br>
+        Family Lawn
+
+        <br><br>
+
+        <strong>INVITED BY</strong><br>
+        Family & Two Cousins
+
+    </div>
+
+</section>
+
+
+
+<!-- BARAAT -->
+
+<section class="card baraat">
+
+    <div class="baraat-icon">
+        ❤️ 🥁 ❤️
+    </div>
+
+    <h2>Baraat</h2>
+
+    <p>
+        With hearts full of happiness,<br>
+        we invite you to join us<br>
+        for the Baraat celebration.
+    </p>
+
+    <div class="details">
+
+        <strong>DATE</strong><br>
+        9 January 2027
+
+        <br><br>
+
+        <strong>TIME</strong><br>
+        7:00 PM
+
+        <br><br>
+
+        <strong>VENUE</strong><br>
+        Wedding Hall
+
+    </div>
+
+</section>
+
+
+
+<!-- WALIMA -->
+
+<section class="card walima">
+
+    <div class="walima-icon">
+        🤍 ✨ 🤍
+    </div>
+
+    <h2>Walima</h2>
+
+    <p>
+        Please join us for an elegant<br>
+        evening filled with love,<br>
+        blessings and happiness.
+    </p>
+
+    <div class="details">
+
+        <strong>DATE</strong><br>
+        10 January 2027
+
+        <br><br>
+
+        <strong>TIME</strong><br>
+        7:30 PM
+
+        <br><br>
+
+        <strong>VENUE</strong><br>
+        Grand Banquet Hall
+
+    </div>
+
+</section>
+
+
+
+<!-- FINAL -->
+
+<section class="card final-card">
+
+    <div class="flower">
+        ✨ 🤍 ✨
+    </div>
+
+    <h2>Thank You</h2>
+
+    <p>
+        Your presence and blessings<br>
+        mean the world to us.
+    </p>
+
+    <h1 style="font-size:35px; margin-top:30px;">
+        Ayesha & Imran Shahid
+    </h1>
+
+    <p style="margin-top:20px; color:#f1d89a;">
+        9 January 2027
+    </p>
+
+</section>
+
+
+
+<!-- CONTROLS -->
+
+<div class="controls">
+
+    <button id="prevBtn">
+        ← Previous
+    </button>
+
+    <button id="nextBtn">
+        Next →
+    </button>
+
+</div>
+
+
+<div class="dots" id="dotsContainer"></div>
+
+
+</div>
+</main>
+
+
+
+<script>
+
+/* =========================
+   VARIABLES
+========================= */
+
+const curtainScreen =
+    document.getElementById("curtainScreen");
+
+const openBtn =
+    document.getElementById("openBtn");
+
+const cards =
+    document.querySelectorAll(".card");
+
+const nextBtn =
+    document.getElementById("nextBtn");
+
+const prevBtn =
+    document.getElementById("prevBtn");
+
+const dotsContainer =
+    document.getElementById("dotsContainer");
+
+let currentCard = 0;
+
+
+/* =========================
+   CREATE DOTS
+========================= */
+
+cards.forEach((card, index) => {
+
+    const dot = document.createElement("span");
+
+    dot.classList.add("dot");
+
+    if (index === 0) {
+        dot.classList.add("active");
+    }
+
+    dot.addEventListener("click", () => {
+        showCard(index);
+    });
+
+    dotsContainer.appendChild(dot);
+
+});
+
+
+const dots = document.querySelectorAll(".dot");
+
+
+/* =========================
+   OPEN INVITATION
+========================= */
+
+openBtn.addEventListener("click", () => {
+
+    curtainScreen.classList.add("open");
+
+    setTimeout(() => {
+        curtainScreen.style.display = "none";
+    }, 1800);
+
+});
+
+
+/* =========================
+   SHOW CARD
+========================= */
+
+function showCard(index) {
+
+    if (index >= cards.length) {
+        index = 0;
+    }
+
+    if (index < 0) {
+        index = cards.length - 1;
+    }
+
+    cards.forEach(card => {
+        card.classList.remove("active");
+    });
+
+    dots.forEach(dot => {
+        dot.classList.remove("active");
+    });
+
+    cards[index].classList.add("active");
+
+    dots[index].classList.add("active");
+
+    currentCard = index;
+}
+
+
+/* =========================
+   NEXT
+========================= */
+
+nextBtn.addEventListener("click", () => {
+
+    showCard(currentCard + 1);
+
+});
+
+
+/* =========================
+   PREVIOUS
+========================= */
+
+prevBtn.addEventListener("click", () => {
+
+    showCard(currentCard - 1);
+
+});
+
+
+/* =========================
+   KEYBOARD
+========================= */
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "ArrowRight") {
+        showCard(currentCard + 1);
+    }
+
+    if (event.key === "ArrowLeft") {
+        showCard(currentCard - 1);
+    }
+
+});
+
+</script>
+
+</body>
+</html>
